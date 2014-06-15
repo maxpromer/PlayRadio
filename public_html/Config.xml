@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+    <widget xmlns   = "http://www.w3.org/ns/widgets"
+        xmlns:gap   = "http://phonegap.com/ns/1.0"
+        id          = "com.playradio.host_1gb"
+        versionCode = "10" 
+        version     = "0.2" >
+
+    <!-- versionCode is optional and Android only -->
+
+    <name>ฟังเพลงออนไลน์</name>
+
+    <description>
+        ฟังเพลงออนไลน์หลากหลายสถานีได้ในแอพเดียว
+    </description>
+
+</widget>
