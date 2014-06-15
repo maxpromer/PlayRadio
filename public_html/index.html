@@ -1,0 +1,24 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Radio</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+<div id="box-radio">
+  <div id="Play" style="opacity:0.8"><img src="Media-Controls-play-icon.png"></div>
+  <div id="Pause"><img src="Media-Controls-pause-icon.png"></div>
+  <div id="Loading"><img src="ajax-loader.gif"></div>
+  <h1>เลือกสถานี</h1>
+  <img id="volume" src="volume-icon-2.png"><input type="range" name="volumeset" id="volumeset" min="0" max="100">
+</div>
+<div class="list-radio">รอซักครู่</div>
+<footer><a href="http://www.host-1gb.com/" target="_blank">บริการโฮสติ้งคุณภาพสูง</a></footer>
+<audio id="radio-play" volume="50"></audio>
+<script src="jquery-1.11.0.min.js"></script>
+<script src="playradio.js"></script>
+</body>
+</html>
