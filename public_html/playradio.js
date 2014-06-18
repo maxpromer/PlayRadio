@@ -28,7 +28,11 @@ $.get("http://app.host-1gb.com/radio.php", function(data){
 		$("#box-radio > #Play").css("opacity", 1).hide();
 		$("#box-radio > h1").text($(this).find("h2").text());
 	});
-}, "json");
+}, "json")
+.fail(function() {
+        var html = '<div class="box-error">ไม่สามารถเชื่อมต่อเพื่อดึงรายการสถานีเพลงได้ โปรดตรวจสอบการเชื่อมต่ออินเตอร์เน็ตของคุณ หรือลองใหม่ภายหลัง</div>';
+        $(".list-radio").html(html);
+});
 
 $("#Pause").click(function(e) {
 	$("#radio-play").trigger("pause");
@@ -47,26 +51,26 @@ $("#Play").click(function(e) {
 
 $("#volumeset").change(function(e) {
 	if ($(this).val() == 0)
-		$("#volume").attr("src", "volume-icon-0.png");
+		$("#volume").attr("src", "image/volume-icon-0.png");
 	else if (($(this).val() > 0) && ($(this).val() < 40))
-		$("#volume").attr("src", "volume-icon-1.png");
+		$("#volume").attr("src", "image/volume-icon-1.png");
 	else if (($(this).val() > 40) && ($(this).val() < 60))
-		$("#volume").attr("src", "volume-icon-2.png");
+		$("#volume").attr("src", "image/volume-icon-2.png");
 	else if (($(this).val() > 60))
-		$("#volume").attr("src", "volume-icon-3.png");
+		$("#volume").attr("src", "image/volume-icon-3.png");
     var volume = $(this).val() / 100;
 	$("#radio-play")[0].volume = volume;
 });
 
 $("#volumeset").mousemove(function(e) {
 	if ($(this).val() == 0)
-		$("#volume").attr("src", "volume-icon-0.png");
+		$("#volume").attr("src", "image/volume-icon-0.png");
 	else if (($(this).val() > 0) && ($(this).val() < 40))
-		$("#volume").attr("src", "volume-icon-1.png");
+		$("#volume").attr("src", "image/volume-icon-1.png");
 	else if (($(this).val() > 40) && ($(this).val() < 60))
-		$("#volume").attr("src", "volume-icon-2.png");
+		$("#volume").attr("src", "image/volume-icon-2.png");
 	else if (($(this).val() > 60))
-		$("#volume").attr("src", "volume-icon-3.png");
+		$("#volume").attr("src", "image/volume-icon-3.png");
     var volume = $(this).val() / 100;
 	$("#radio-play")[0].volume = volume;
 });
