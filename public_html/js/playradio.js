@@ -39,13 +39,30 @@ $.get("http://app.host-1gb.com/radio.php", function(data){
 		$("#box-radio > h1").text($(this).find("h2").text());
 	});
         
-        var mySwiper = new Swiper('.swiper-container');
+        var mySwiper = new Swiper('.swiper-container', {
+            speed:500,
+            onSlideChangeStart: function(){
+                $(".tabs .active").removeClass('active');
+                $(".tabs a").eq(mySwiper.activeIndex).addClass('active');
+            }
+        });
+        
+        $(".tabs a").on('touchstart mousedown',function(e){
+            e.preventDefault();
+            $(".tabs .active").removeClass('active');
+            $(this).addClass('active');
+            mySwiper.swipeTo( $(this).index());
+        });
+        $(".tabs a").click(function(e){
+            e.preventDefault();
+        });
         
         $(".swiper-wrapper, .slide-online, .slide-fm").height("auto");
 }, "json")
 .fail(function() {
         var html = '<div class="box-error">ไม่สามารถเชื่อมต่อเพื่อดึงรายการสถานีเพลงได้ โปรดตรวจสอบการเชื่อมต่ออินเตอร์เน็ตของคุณ หรือลองใหม่ภายหลัง</div>';
         $(".list-radio").html(html);
+        $("#loadind-page").hide();
 });
 
 $("#Pause").click(function(e) {
