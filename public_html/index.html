@@ -4,7 +4,8 @@
 <meta charset="utf-8">
 <title>Radio</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="css/idangerous.swiper.css">
+<link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
@@ -16,11 +17,18 @@
   <img id="volume" src="image/volume-icon-2.png"><input type="range" name="volumeset" id="volumeset" min="0" max="100">
 </div>
 <div class="list-radio">
-  <div id="loadind-page"><img src="image/ajax-loader-page.gif"></div>
+  <div class="swiper-container">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide slide-online"></div>
+      <div class="swiper-slide slide-fm"></div>
+    </div>
+  </div>
 </div>
-<footer><a href="http://www.host-1gb.com/" target="_blank">บริการโฮสติ้งคุณภาพสูง</a></footer>
+<div id="loadind-page"><img src="image/ajax-loader-page.gif"></div>
+<footer><a href="http://www.host-1gb.com/" target="_blank"><img src="image/600x120.png" alt=""></a></footer>
 <audio id="radio-play" volume="50"></audio>
-<script src="jquery-1.11.0.min.js"></script>
-<script src="playradio.js"></script>
+<script src="js/jquery-1.11.0.min.js"></script>
+<script src="js/idangerous.swiper-2.1.min.js"></script>
+<script src="js/playradio.js"></script>
 </body>
 </html>

@@ -1,23 +1,33 @@
 $("#radio-play").on("loadeddata", function(){
-	$(".list-radio > button.active").removeClass("loading");
+	$(".list-radio button.active").removeClass("loading");
 	$("#box-radio > #Play").css("opacity", 1).hide();
 	$("#box-radio > #Loading").hide();
 	$("#box-radio > #Pause").show();
 });
 
 $.get("http://app.host-1gb.com/radio.php", function(data){
-	$(".list-radio").html('');
+	$(".slide-one").html('');
 	for (var i=0;i<data.length;i++){
-		var html = '';
+            var html = '';
+            if (data[i]['type'] == 'online'){
 		html += "<button data-src=\"" + data[i]['url'] + "\">\n";
 		html += "<h2>" + data[i]['name'] + "</h2>\n";
 		html += "<div>" + data[i]['description'] + "</div>\n"
 		html += "</button>\n";
-		$(".list-radio").append(html);
+		$(".slide-online").append(html);
+            }else if (data[i]['type'] == 'fm'){
+		html += "<button data-src=\"" + data[i]['url'] + "\">\n";
+		html += "<h2>" + data[i]['name'] + "</h2>\n";
+		html += "<div>" + data[i]['description'] + "</div>\n"
+		html += "</button>\n";
+		$(".slide-fm").append(html);
+            }
 	}
+        
+        $("#loadind-page").hide();
 	
 	$("button").click(function(e) {
-		$(".list-radio > button.active").each(function(index) {
+		$(".list-radio button.active").each(function(index) {
 			$(this).removeClass("active").removeClass("loading");
 		});
 		$(this).addClass("active");
@@ -28,6 +38,10 @@ $.get("http://app.host-1gb.com/radio.php", function(data){
 		$("#box-radio > #Play").css("opacity", 1).hide();
 		$("#box-radio > h1").text($(this).find("h2").text());
 	});
+        
+        var mySwiper = new Swiper('.swiper-container');
+        
+        $(".swiper-wrapper, .slide-online, .slide-fm").height("auto");
 }, "json")
 .fail(function() {
         var html = '<div class="box-error">ไม่สามารถเชื่อมต่อเพื่อดึงรายการสถานีเพลงได้ โปรดตรวจสอบการเชื่อมต่ออินเตอร์เน็ตของคุณ หรือลองใหม่ภายหลัง</div>';
