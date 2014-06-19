@@ -13,6 +13,9 @@
         ฟังเพลงออนไลน์หลากหลายสถานีได้ในแอพเดียว
     </description>
 	
-	<uses-permission android:name="android.permission.INTERNET" />
+	<preference name="permissions" value="none"/>
+
+    <!-- to enable individual permissions use the following examples -->
+    <feature name="http://api.phonegap.com/1.0/network"/>
 
 </widget>
