@@ -188,33 +188,14 @@ a{
 
 .tabs{
     width: 100%;
-    font-size: 12px;
+    font-size: 14px;
     margin-bottom: 10px;
     box-sizing: border-box;
     text-align: center;
+    padding: 0 10px;
 }
 
-.tabs > a{
-    padding: 5px 10px;
-    color: #1A1A1A;
-    text-decoration: none;
-    border: 1px solid #D6D6D6;
-    box-sizing: border-box;
+#volumeset{
     display: inline-block;
-    background: #FFF;
-    margin: 0px;
-    outline: none;
-    border-radius: 5px 0 0 5px;
-}
-
-.tabs > a:last-child{
-    border-left: none;
-    border-radius: 0 5px 5px 0;
-}
-
-.tabs > a.active{
-    background: #4FC1E9;
-    
-    color: #FFFFFF;
-    border: 1px solid #3BAFDA;
+    width: auto;
 }

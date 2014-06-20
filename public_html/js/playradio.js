@@ -42,15 +42,15 @@ $.get("http://app.host-1gb.com/radio.php", function(data){
         var mySwiper = new Swiper('.swiper-container', {
             speed:500,
             onSlideChangeStart: function(){
-                $(".tabs .active").removeClass('active');
-                $(".tabs a").eq(mySwiper.activeIndex).addClass('active');
+                $(".tabs .btn-primary").removeClass('btn-primary').addClass('btn-default');
+                $(".tabs a").eq(mySwiper.activeIndex).removeClass('btn-default').addClass('btn-primary');
             }
         });
         
         $(".tabs a").on('touchstart mousedown',function(e){
             e.preventDefault();
-            $(".tabs .active").removeClass('active');
-            $(this).addClass('active');
+            $(".tabs .btn-primary").removeClass('btn-primary').addClass('btn-default');
+            $(this).removeClass('btn-default').addClass('btn-primary');
             mySwiper.swipeTo( $(this).index());
         });
         $(".tabs a").click(function(e){
