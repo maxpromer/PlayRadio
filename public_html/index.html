@@ -1,42 +1,54 @@
-<!DOCTYPE HTML>
+<!doctype html>
 <html>
 <head>
 <meta charset="utf-8">
-<title>Radio</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="css/idangerous.swiper.css">
-<link rel="stylesheet" href="css/bootstrap.min.css">
-<link rel="stylesheet" href="css/bootflat.min.css">
-<link rel="stylesheet" href="css/style.css">
+<title>ฟังวิทยุออนไลน์</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="js/jquery-1.11.0.min.js"></script>
+<script src="js/app.js"></script>
+<link rel="stylesheet" href="css/font-awesome.min.css">
+<link rel="stylesheet" href="css/style-new.css">
 </head>
 
 <body>
-<div id="box-radio">
-  <div id="Play"><img src="image/Media-Controls-play-icon.png"></div>
-  <div id="Pause"><img src="image/Media-Controls-pause-icon.png"></div>
-  <div id="Loading"><img src="image/ajax-loader.gif"></div>
-  <h1>เลือกสถานี</h1>
-  <img id="volume" src="image/volume-icon-2.png"><input type="range" name="volumeset" id="volumeset" min="0" max="100">
-</div>
-<div class="list-radio">
-  <div class="tabs">
-      <div class="btn-group btn-group-justified">
-          <a href="#" class="btn btn-primary">ฟังวิทยุออนไลน์</a>
-          <a href="#" class="btn btn-default">ฟังวิทยุ FM</a>
-      </div>
+<audio id="radio-play" volume="50"></audio>
+<header>
+  <h1>ฟังเพลงออนไลน์</h1>
+</header>
+<div class="box">
+  <div class="box-type" id="type-online">
+    <h2>สถานีวิทยุออนไลน์</h2>
+    <section id="radio-online"></section>
+    <h2>สถานีวิทยุ FM</h2>
+    <section id="radio-fm"></section>
   </div>
-  <div class="swiper-container">
-    <div class="swiper-wrapper">
-      <div class="swiper-slide slide-online"></div>
-      <div class="swiper-slide slide-fm"></div>
+</div>
+<footer>
+  <div class="box-control">
+    <div>
+      <button id="back"><i class="fa fa-backward"></i></button>
+    </div>
+    <div class="pause-play show-play">
+      <button id="pause"><img src="image/pause.png"></button>
+      <button id="play"><img src="image/play.png"></button>
+      <button id="loading"></button>
+    </div>
+    <div>
+      <button id="next"><i class="fa fa-forward"></i></button>
     </div>
   </div>
+</footer>
+<div class="alert-popup" id="alert-error">
+  <div class="header">
+    <h3>ไม่สามารถเชื่อมต่อได้</h3>
+  </div>
+  <section>
+    <p>ไม่สามารถเชื่อมต่อกับเซิฟเวอร์เพื่อดึงรายชื่อสถานีเพลงได้ โปรดลองใหม่อีกครั้งภายหลัง</p>
+  </section>
+  <div class="footer">
+    <button id="cancel">ตกลง</button>
+  </div>
 </div>
-<div id="loadind-page"><img src="image/ajax-loader-page.gif"></div>
-<footer><a href="http://www.host-1gb.com/" target="_blank"><img src="image/600x120.png" alt=""></a></footer>
-<audio id="radio-play" volume="50"></audio>
-<script src="js/jquery-1.11.0.min.js"></script>
-<script src="js/idangerous.swiper-2.1.min.js"></script>
-<script src="js/playradio.js"></script>
+</div>
 </body>
 </html>
