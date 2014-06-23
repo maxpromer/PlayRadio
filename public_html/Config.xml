@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" ?>
     <widget xmlns   = "http://www.w3.org/ns/widgets"
         xmlns:gap   = "http://phonegap.com/ns/1.0"
-        id          = "com.playradio.host_1gb"
+        id          = "com.playradio"
         versionCode = "10" 
-        version     = "0.2" >
+        version     = "1" >
 
     <!-- versionCode is optional and Android only -->
 
