@@ -7,10 +7,10 @@
 
     <!-- versionCode is optional and Android only -->
 
-    <name>ฟังเพลงออนไลน์</name>
+    <name>ฟังวิทยุออนไลน์</name>
 
     <description>
-        ฟังเพลงออนไลน์หลากหลายสถานีได้ในแอพเดียว
+        ฟังเพลงวิทยุออนไลน์หลากหลายสถานี ทั้งสถานีออนไลน์ และสถานี FM ได้ในแอพเดียว
     </description>
 	
 	<preference name="permissions" value="none"/>
